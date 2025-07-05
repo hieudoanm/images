@@ -1,56 +1,33 @@
 {
-	"name": "images",
-	"version": "0.0.1",
-	"private": true,
-	"description": "Mini App Store",
-	"keywords": [
-		"images"
-	],
-	"homepage": "https://github.com/hieudoanm/images#readme",
-	"bugs": {
-		"url": "https://github.com/hieudoanm/images/issues"
-	},
-	"repository": {
-		"type": "git",
-		"url": "git+ssh://git@github.com/hieudoanm/images.git"
-	},
-	"license": "GPL-3.0",
-	"author": "hieudoanm <hieumdoan@gmail.com> (https://hieudoanm.github.io/)",
-	"packageManager": "pnpm@10.12.4",
-	"scripts": {
-		"format": "prettier --cache --write .",
-		"lint": "next lint",
-		"predev": "kill-port 3000",
-		"dev": "next dev",
-		"prebuild": "rimraf .next docs",
-		"build": "next build",
-		"postbuild": "touch docs/.nojekyll",
-		"prestart": "kill-port 3000",
-		"start": "next start",
-		"prepare": "husky || true"
-	},
-	"dependencies": {
-		"@silvia-odwyer/photon": "0.3.3",
-		"next": "15.3.5",
-		"qrcode": "1.5.4",
-		"react": "19.1.0",
-		"react-dom": "19.1.0"
-	},
-	"devDependencies": {
-		"@eslint/eslintrc": "3.3.1",
-		"@tailwindcss/postcss": "4.1.11",
-		"@types/node": "24.0.10",
-		"@types/qrcode": "1.5.5",
-		"@types/react": "19.1.8",
-		"@types/react-dom": "19.1.6",
-		"eslint": "9.30.1",
-		"eslint-config-next": "15.3.5",
-		"husky": "9.1.7",
-		"kill-port": "2.0.1",
-		"prettier": "3.6.2",
-		"prettier-plugin-tailwindcss": "0.6.13",
-		"rimraf": "6.0.1",
-		"tailwindcss": "4.1.11",
-		"typescript": "5.8.3"
-	}
+  "name": "@images/app",
+  "version": "0.0.1",
+  "description": "Images Apps",
+  "keywords": [
+    "images",
+    "app"
+  ],
+  "homepage": "https://github.com/hieudoanm/images#readme",
+  "bugs": {
+    "url": "https://github.com/hieudoanm/images/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/hieudoanm/images.git"
+  },
+  "license": "GPL-3.0",
+  "author": "hieudoanm <hieumdoan@gmail.com> (https://hieudoanm.github.io)",
+  "scripts": {
+    "lint": "turbo run lint",
+    "prebuild": "rimraf docs",
+    "build": "turbo run build",
+    "postbuild": "touch docs/.nojekyll",
+    "format": "turbo run format",
+    "prepare": "husky || true"
+  },
+  "devDependencies": {
+    "husky": "9.1.7",
+    "rimraf": "6.0.1",
+    "turbo": "2.5.4"
+  },
+  "packageManager": "pnpm@10.12.4"
 }

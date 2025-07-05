@@ -1,0 +1,19 @@
+lint:
+	go vet ./...
+
+format:
+	go fmt ./...
+
+build:
+	go vet ./...
+	go fmt ./...
+	go build -o ./bin/images ./main.go
+
+install:
+	go vet ./...
+	go fmt ./...
+	go build -o ./bin/images ./main.go
+	mkdir -p ~/bin
+	cp ./bin/images ~/bin/
+	chmod +x ~/bin/images
+	export PATH="$(HOME)/bin:$(PATH)"
