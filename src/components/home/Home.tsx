@@ -1,9 +1,9 @@
+import { download } from '@images/utils/download';
 import { base64, filter, getMimeType, png2ico, png2jpg, svg2png } from '@images/utils/image';
 import { FC, useState } from 'react';
 import { Features } from './Features';
-import { Navbar } from './Navbar';
 import { Footer } from './Footer';
-import { download } from '@images/utils/download';
+import { Navbar } from './Navbar';
 
 const Home: FC = () => {
 	const [{ originalBase64 = '', filteredBase64 = '', file = null }, setState] = useState<{
@@ -38,7 +38,7 @@ const Home: FC = () => {
 						Upload and edit your images directly in the browser—crop, draw, blur, and more with full privacy.
 					</p>
 					<div className="flex justify-center gap-4">
-						<label className="inline-block cursor-pointer rounded-full border border-neutral-800 px-6 py-3">
+						<label className="inline-block cursor-pointer rounded-full bg-neutral-100 px-6 py-3 text-neutral-900">
 							<span>Upload Image</span>
 							<input type="file" accept="image/*" onChange={handleFile} className="hidden" />
 						</label>
@@ -48,7 +48,7 @@ const Home: FC = () => {
 									const content = await png2ico(filteredBase64 || originalBase64);
 									download({ content, format: 'ico', filename: 'favicon' }).image();
 								}}
-								className="cursor-pointer rounded-full border border-neutral-800 px-6 py-3 transition hover:bg-neutral-900">
+								className="cursor-pointer rounded-full bg-neutral-100 px-6 py-3 text-neutral-900 transition">
 								Export as ICO
 							</button>
 						)}
@@ -58,7 +58,7 @@ const Home: FC = () => {
 									const content = await png2jpg(filteredBase64 || originalBase64);
 									download({ content, format: 'jpg', filename: 'image' }).image();
 								}}
-								className="cursor-pointer rounded-full border border-neutral-800 px-6 py-3 transition hover:bg-neutral-900">
+								className="cursor-pointer rounded-full bg-neutral-100 px-6 py-3 text-neutral-900 transition">
 								Export as JPG
 							</button>
 						)}
@@ -68,7 +68,7 @@ const Home: FC = () => {
 									const content = await svg2png(filteredBase64 || originalBase64);
 									download({ content, format: 'png', filename: 'image' }).image();
 								}}
-								className="cursor-pointer rounded-full border border-neutral-800 px-6 py-3 transition hover:bg-neutral-900">
+								className="cursor-pointer rounded-full bg-neutral-100 px-6 py-3 text-neutral-900 transition">
 								Export as PNG
 							</button>
 						)}
@@ -90,7 +90,7 @@ const Home: FC = () => {
 							<p className="mt-4 text-neutral-500">
 								Upload your image and start editing instantly — no sign-up, no server, 100% local and private.
 							</p>
-							<label className="mt-6 inline-block cursor-pointer rounded-full border border-neutral-800 px-6 py-3 text-white">
+							<label className="mt-6 inline-block cursor-pointer rounded-full bg-neutral-100 px-6 py-3 text-neutral-900">
 								<span>Upload Image</span>
 								<input type="file" accept="image/*" onChange={handleFile} className="hidden" />
 							</label>
@@ -109,7 +109,7 @@ const Home: FC = () => {
 									const filteredBase64: string = await filter('golden', originalBase64);
 									setState((previous) => ({ ...previous, filteredBase64: filteredBase64 }));
 								}}
-								className="w-full cursor-pointer rounded-full border border-neutral-800 px-4 py-2">
+								className="w-full cursor-pointer rounded-full bg-neutral-100 px-4 py-2 text-neutral-900">
 								Filter - Golden
 							</button>
 							<button
@@ -118,7 +118,7 @@ const Home: FC = () => {
 									const filteredBase64: string = await filter('grayscale', originalBase64);
 									setState((previous) => ({ ...previous, filteredBase64: filteredBase64 }));
 								}}
-								className="w-full cursor-pointer rounded-full border border-neutral-800 px-4 py-2">
+								className="w-full cursor-pointer rounded-full bg-neutral-100 px-4 py-2 text-neutral-900">
 								Filter - Grayscale
 							</button>
 						</div>

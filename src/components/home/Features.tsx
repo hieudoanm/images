@@ -3,7 +3,7 @@ import { FC } from 'react';
 export const Features: FC = () => {
 	return (
 		<section className="py-16">
-			<div className="mx-auto max-w-6xl px-6 text-center">
+			<div className="container mx-auto p-4 text-center md:p-8">
 				<h3 className="text-3xl font-semibold sm:text-4xl">Why Use Our Image Editor?</h3>
 				<p className="mx-auto mt-4 max-w-2xl text-neutral-500">
 					A fast, private, and intuitive image editor right in your browser. No uploads. No fuss. Just editing.
