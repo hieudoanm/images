@@ -1,4 +1,4 @@
-import { APP_NAME } from '@images/constants';
+import { APP_NAME } from '@images/constants/app';
 import Link from 'next/link';
 import { FC } from 'react';
 

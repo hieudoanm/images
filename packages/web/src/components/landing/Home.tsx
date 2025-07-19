@@ -5,7 +5,7 @@ import { Features } from './Features';
 import { Footer } from './Footer';
 import { Navbar } from './Navbar';
 import { LinearBackground, LinearText } from '../shared/Linear';
-import { APP_NAME } from '@images/constants';
+import { APP_NAME } from '@images/constants/app';
 
 const Home: FC = () => {
 	const [{ originalBase64 = '', filteredBase64 = '', file = null }, setState] = useState<{
