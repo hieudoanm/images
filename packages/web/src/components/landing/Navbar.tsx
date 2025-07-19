@@ -8,11 +8,6 @@ export const Navbar = () => {
 				<Link href="/">
 					<h1 className="font-black">{APP_NAME}</h1>
 				</Link>
-				<nav className="space-x-4 text-sm font-medium md:text-base">
-					<Link href="/qrcode" className="text-neutral-500 hover:text-white">
-						QRCode
-					</Link>
-				</nav>
 			</div>
 		</header>
 	);
